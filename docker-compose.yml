@@ -1,13 +1,13 @@
-version: "3"
+version: "3.9"
 services:
   web_api:
-    image: web_api
-    container_name: web_api_application
     build:
       context: ./WebApi
       dockerfile: Dockerfile
+    image: web_api
+    container_name: web_api_application
     ports:
-      - "5000:80"
+      - "5000:8080"
   sql:
     image: "mcr.microsoft.com/mssql/server:2022-latest"
     container_name: sql_server2022
@@ -15,7 +15,7 @@ services:
       - "1433:1433"
     environment:
       - ACCEPT_EULA=y
-      - SA_PASSWORD=123
+      - SA_PASSWORD=123456Aa@
   angular_client:
     build:
       context: ./AngularClient
