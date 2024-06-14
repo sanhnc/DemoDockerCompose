@@ -1,0 +1,10 @@
+version: "3"
+services:
+  web_api:
+    image: web_api
+    container_name: web_api_application
+    build:
+      context: ./WebApi
+      dockerfile: Dockerfile
+    ports:
+      - "5000:80"
